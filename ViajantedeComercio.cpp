@@ -36,24 +36,9 @@ string NombreCiudad(int NumeroCiudad)
     }
 }
 
-int main()
+vector<int> algoritmoBiFrost(vector<int> Ciudades, int Distancias[5][5], int CiudadActual)
 {
-
-    // Lista de Ciudades
-    vector<int> Ciudades = {0, 1, 2, 3, 4};
-
-    // Distancia entre Ciudades
-    int Distancias[5][5] = {
-        // A  B  C   D   Z
-        {0, 10, 15, 20, 40},  // A
-        {10, 0, 35, 25, 10},  // B
-        {15, 35, 0, 30, 15},  // C
-        {20, 25, 30, 0, 20},  // D
-        {40, 10, 15, 20, 0}}; // Z
-
     vector<int> MejorRuta;
-
-    int CiudadActual = 0;
 
     MejorRuta.push_back(CiudadActual); // No importa realmente donde empezemos
 
@@ -83,6 +68,28 @@ int main()
     }
 
     MejorRuta.push_back(MejorRuta[0]);
+
+    return MejorRuta;
+}
+
+int main()
+{
+
+    // Lista de Ciudades
+    vector<int> Ciudades = {0, 1, 2, 3, 4};
+
+    // Distancia entre Ciudades
+    int Distancias[5][5] = {
+        // A  B  C   D   Z
+        {0, 10, 15, 20, 40},  // A
+        {10, 0, 35, 25, 10},  // B
+        {15, 35, 0, 30, 15},  // C
+        {20, 25, 30, 0, 20},  // D
+        {40, 10, 15, 20, 0}}; // Z
+
+    vector<int> MejorRuta;
+
+     MejorRuta = algoritmoBiFrost(Ciudades, Distancias, 0);
 
     // -------------------------------------------------------
 
