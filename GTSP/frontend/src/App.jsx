@@ -1,4 +1,10 @@
 import { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -13,8 +19,13 @@ function App() {
   return (
     <>
       <div>
-        <TSPSimulator />
+        <Router>
+          <Routes>
+            <Route path="/tspsimulator" element={<TSPSimulator />} />
+          </Routes>
+        </Router>
       </div>
+
       {/* <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
