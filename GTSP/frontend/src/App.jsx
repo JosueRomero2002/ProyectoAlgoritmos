@@ -12,7 +12,9 @@ import "./App.css";
 import TSPMap from "../components/map";
 
 import TSPSimulator from "../pages/TSPSimulator";
+import Knapsack from "../pages/Knapsack";
 import SubsetSumApp from "../pages/SubsetSumApp";
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -22,6 +24,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/tspsimulator" element={<TSPSimulator />} />
+            <Route path="/knapsack" element={<Knapsack />} />
             <Route path="/subsetsumapp" element={<SubsetSumApp />} />
           </Routes>
         </Router>
