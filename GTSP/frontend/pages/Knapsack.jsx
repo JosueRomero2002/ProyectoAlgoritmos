@@ -15,19 +15,19 @@ const MochilaMochila = () => {
 
   const knapsackButt = () => {
     const items = objectsArray(numElements);
-    const start = performance.now();
-    const ksR = knapsackRecursion(knapsackWeight, items, numElements);
-    const end = performance.now();
-    setTime2(end - start);
-    console.log(end - start);
     const start2 = performance.now();
     const ksD = knapsackDynamic(knapsackWeight, items);
     const end2 = performance.now();
     setTime1(end2 - start2);
     console.log(end2 - start2);
-    setDynamicImages(ksR.items);
-    setProfit2(ksR.profit);
     setProfit1(ksD);
+    setDynamicImages(ksR.items);
+    const start = performance.now();
+    const ksR = knapsackRecursion(knapsackWeight, items, numElements);
+    const end = performance.now();
+    setTime2(end - start);
+    console.log(end - start);
+    setProfit2(ksR.profit);
   };
   return (
     <Layout style={{ height: "100vh", width: "100vw" }}>
