@@ -14,17 +14,17 @@ const MochilaMochila = () => {
   const [dynamicImages, setDynamicImages] = useState([]);
 
   const knapsackButt = () => {
-    const items = objectsArray(numElements);
+   const items = objectsArray(numElements);
     const start2 = performance.now();
     const ksD = knapsackDynamic(knapsackWeight, items);
     const end2 = performance.now();
     setTime1(end2 - start2);
     console.log(end2 - start2);
     setProfit1(ksD);
-    setDynamicImages(ksR.items);
     const start = performance.now();
     const ksR = knapsackRecursion(knapsackWeight, items, numElements);
     const end = performance.now();
+    setDynamicImages(ksR.items);
     setTime2(end - start);
     console.log(end - start);
     setProfit2(ksR.profit);
