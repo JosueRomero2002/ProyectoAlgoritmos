@@ -69,7 +69,7 @@ const TSPSimulator = () => {
     let ciudadActual = 0;
 
     for (let i = 0; i < locations.length; i++) {
-      // await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500)); // Simular tiempo de cálculo
       const siguienteCiudad = algoritmoBiFrost(
         locations,
         distancias,

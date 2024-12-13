@@ -41,8 +41,7 @@ const MochilaMochila = () => {
           gap: "10px",
           width: "100%",
           height: "80px",
-        }}
-      >
+        }}>
         <img
           src="../src/assets/Mono.png"
           alt="Knapsack Logo"
@@ -54,8 +53,7 @@ const MochilaMochila = () => {
         />
         <Title
           level={2}
-          style={{ color: "white", margin: 0, textAlign: "center" }}
-        >
+          style={{ color: "white", margin: 0, textAlign: "center" }}>
           KNAPSACK
         </Title>
       </Header>
@@ -72,8 +70,7 @@ const MochilaMochila = () => {
             alignItems: "center",
             height: "100%",
             gap: "10px",
-          }}
-        >
+          }}>
           <Flex gap={50} vertical>
             <img
               src="../src/assets/Dora.png"
@@ -113,8 +110,7 @@ const MochilaMochila = () => {
             flexDirection: "column",
             gap: "16px",
             padding: "16px",
-          }}
-        >
+          }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <Flex vertical>
               <Title level={4}>Zorro Experto</Title>
@@ -137,8 +133,7 @@ const MochilaMochila = () => {
                   display: "flex",
                   flexWrap: "wrap",
                   gap: "8px",
-                }}
-              >
+                }}>
                 {dynamicImages.map((item, index) => (
                   <img
                     key={index}
@@ -173,8 +168,7 @@ const MochilaMochila = () => {
                   display: "flex",
                   flexWrap: "wrap",
                   gap: "8px",
-                }}
-              >
+                }}>
                 {dynamicImages.map((item, index) => (
                   <img
                     key={index}
@@ -196,8 +190,7 @@ const MochilaMochila = () => {
           background: "#FFB200",
           lineHeight: "10px",
           width: "100%",
-        }}
-      >
+        }}>
         All Rights Reserved (C) 2024 Dora{" "}
       </Footer>
     </Layout>

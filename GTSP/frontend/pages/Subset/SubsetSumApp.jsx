@@ -1,31 +1,29 @@
 import React, { useState } from "react";
-import "../src/styles.css";
+// import "../src/styles.css";
+import "./estilos.css";
 
 // Algoritmo exacto
 const findSubsetsRecursive = (array, sum) => {
-  const result = new Set(); 
+  const result = new Set();
   const backtrack = (currentSubset, index, currentSum) => {
     if (currentSum === sum) {
-      result.add(JSON.stringify([...currentSubset].sort())); 
+      result.add(JSON.stringify([...currentSubset].sort()));
       return;
     }
     if (currentSum > sum || index >= array.length) {
       return;
     }
 
-   
     currentSubset.push(array[index]);
     backtrack(currentSubset, index + 1, currentSum + array[index]);
 
-    
     currentSubset.pop();
     backtrack(currentSubset, index + 1, currentSum);
   };
 
   backtrack([], 0, 0);
-  return Array.from(result).map((subset) => JSON.parse(subset)); 
+  return Array.from(result).map((subset) => JSON.parse(subset));
 };
-
 
 const findSubsetsOptimized = (array, sum) => {
   const dp = Array.from({ length: array.length + 1 }, () =>
@@ -64,9 +62,6 @@ const findSubsetsOptimized = (array, sum) => {
   return Array.from(result).map((subset) => JSON.parse(subset));
 };
 
-
-
-
 const SubsetSumApp = () => {
   const [array, setArray] = useState([]);
   const [sum, setSum] = useState(0);
@@ -77,8 +72,9 @@ const SubsetSumApp = () => {
 
   // Generar un arreglo aleatorio
   const generateArray = (n) => {
-    const randomArray = Array.from({ length: n }, () =>
-      Math.floor(Math.random() * 100) + 1
+    const randomArray = Array.from(
+      { length: n },
+      () => Math.floor(Math.random() * 100) + 1
     );
     setArray(randomArray);
     setRecursiveResult([]);
@@ -145,7 +141,9 @@ const SubsetSumApp = () => {
         <h3>Tabla de Subconjuntos</h3>
         <div className="grid">
           {array.map((value, i) => (
-            <div key={i} className="cell">{value}</div>
+            <div key={i} className="cell">
+              {value}
+            </div>
           ))}
         </div>
         {recursiveResult.length > 0 && (

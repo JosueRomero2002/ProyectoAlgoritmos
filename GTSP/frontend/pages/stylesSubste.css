@@ -1,0 +1,17 @@
+.container {
+    width: 150%; /* Ocupa casi todo el ancho disponible */
+    max-width: 2000px; /* Limita el ancho máximo para pantallas grandes */
+    height: 100vh; /* Usa el 90% de la altura de la pantalla */
+    background: #fff;
+    padding: 30px; /* Más espacio interno para un diseño cómodo */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    border-radius: 12px; /* Bordes redondeados más evidentes */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más notoria */
+    overflow: auto; /* Permite scroll si el contenido es mayor que la pantalla */
+  }
+  
