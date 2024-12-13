@@ -1,5 +1,27 @@
 
-  
+ /* estilos.css */
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Los demás estilos permanecen iguales */
+
+ 
   .container {
     width: 150%; /* Ocupa casi todo el ancho disponible */
     max-width: 2000px; /* Limita el ancho máximo para pantallas grandes */

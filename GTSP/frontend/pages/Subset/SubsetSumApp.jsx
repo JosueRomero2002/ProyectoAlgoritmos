@@ -100,69 +100,71 @@ const SubsetSumApp = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Subset Sum Visualizer</h1>
-      <p>Ingresa el tamaño del arreglo y la suma objetivo:</p>
+    <div className="app-wrapper">
+      <div className="container">
+        <h1>Subset Sum Visualizer</h1>
+        <p>Ingresa el tamaño del arreglo y la suma objetivo:</p>
 
-      <div className="controls">
-        <input
-          type="number"
-          placeholder="Tamaño del arreglo"
-          onChange={(e) => generateArray(Number(e.target.value))}
-        />
-        <input
-          type="number"
-          placeholder="Suma objetivo"
-          value={sum}
-          onChange={(e) => setSum(Number(e.target.value))}
-        />
-        <button onClick={handleCalculate}>Calcular</button>
-      </div>
-
-      <div className="results">
-        <h2>Resultados</h2>
-        <div>
-          <p>
-            <strong>Resultado Algoritmo Exacto:</strong>{" "}
-            {recursiveResult.length > 0 ? "Sí" : "No"}
-          </p>
-          <p>
-            <strong>Tiempo Algoritmo Exacto:</strong> {recursiveTime} ms
-          </p>
-          <p>
-            <strong>Resultado Algoritmo Aproximado:</strong>{" "}
-            {optimizedResult.length > 0 ? "Sí" : "No"}
-          </p>
-          <p>
-            <strong>Tiempo Algoritmo Aproximado:</strong> {optimizedTime} ms
-          </p>
+        <div className="controls">
+          <input
+            type="number"
+            placeholder="Tamaño del arreglo"
+            onChange={(e) => generateArray(Number(e.target.value))}
+          />
+          <input
+            type="number"
+            placeholder="Suma objetivo"
+            value={sum}
+            onChange={(e) => setSum(Number(e.target.value))}
+          />
+          <button onClick={handleCalculate}>Calcular</button>
         </div>
 
-        <h3>Tabla de Subconjuntos</h3>
-        <div className="grid">
-          {array.map((value, i) => (
-            <div key={i} className="cell">
-              {value}
-            </div>
-          ))}
-        </div>
-        {recursiveResult.length > 0 && (
+        <div className="results">
+          <h2>Resultados</h2>
           <div>
-            <h3>Subconjuntos que suman el objetivo</h3>
-            {recursiveResult.map((subset, index) => (
-              <div key={index} className="subset-container">
-                <div className="subset-title">Subconjunto {index + 1}:</div>
-                <div className="grid">
-                  {subset.map((value, i) => (
-                    <div key={i} className="cell highlight">
-                      {value}
-                    </div>
-                  ))}
-                </div>
+            <p>
+              <strong>Resultado Algoritmo Exacto:</strong>{" "}
+              {recursiveResult.length > 0 ? "Sí" : "No"}
+            </p>
+            <p>
+              <strong>Tiempo Algoritmo Exacto:</strong> {recursiveTime} ms
+            </p>
+            <p>
+              <strong>Resultado Algoritmo Aproximado:</strong>{" "}
+              {optimizedResult.length > 0 ? "Sí" : "No"}
+            </p>
+            <p>
+              <strong>Tiempo Algoritmo Aproximado:</strong> {optimizedTime} ms
+            </p>
+          </div>
+
+          <h3>Tabla de Subconjuntos</h3>
+          <div className="grid">
+            {array.map((value, i) => (
+              <div key={i} className="cell">
+                {value}
               </div>
             ))}
           </div>
-        )}
+          {recursiveResult.length > 0 && (
+            <div>
+              <h3>Subconjuntos que suman el objetivo</h3>
+              {recursiveResult.map((subset, index) => (
+                <div key={index} className="subset-container">
+                  <div className="subset-title">Subconjunto {index + 1}:</div>
+                  <div className="grid">
+                    {subset.map((value, i) => (
+                      <div key={i} className="cell highlight">
+                        {value}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
