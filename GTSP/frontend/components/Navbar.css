@@ -1,0 +1,24 @@
+/* Estilo para íconos del menú */
+.ant-menu-horizontal > .ant-menu-item .anticon {
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Animación de zoom al pasar el mouse sobre el ícono */
+  .ant-menu-horizontal > .ant-menu-item:hover .anticon {
+    transform: scale(1.2);
+  }
+  
+  /* Ocultar texto del enlace por defecto */
+  .ant-menu-horizontal > .ant-menu-item > a {
+    display: none;
+  }
+  
+  /* Mostrar texto con animación al pasar el mouse */
+  .ant-menu-horizontal > .ant-menu-item:hover > a {
+    display: inline-block;
+    margin-left: 8px; 
+    transition: opacity 0.3s ease-in-out;
+     opacity: 1;
+}
+  
